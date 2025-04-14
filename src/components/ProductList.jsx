@@ -7,7 +7,7 @@ function ProductList() {
   } = useLoaderData();
   return (
     <div>
-      {product.map(() => {
+      {product?.map((product) => {
         return <Product product={product} key={product.id} />;
       })}
     </div>
