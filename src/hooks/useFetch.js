@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { axiosInstance } from "../utils";
-import { combineSlices, findNonSerializableValue } from "@reduxjs/toolkit";
 
 export function useFetch(url) {
   const [data, setData] = useState(null);
@@ -12,7 +11,7 @@ export function useFetch(url) {
     const fetchData = async () => {
       setIsPending(true);
       try {
-        const req = await axiosInstance(url);
+        const req = await axiosInstance("https://dummyjson.com/product");
         setData(req);
       } catch (error) {
         console.log(error);

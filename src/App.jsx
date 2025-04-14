@@ -4,8 +4,10 @@ import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Product from "./pages/Product";
 
 import { loader as HomeLoader } from "./pages/Home";
+import { loader as ProductLoader } from "./pages/Product";
 
 function App() {
   const routes = createBrowserRouter([
@@ -20,15 +22,21 @@ function App() {
         },
         {
           path: "./about",
-          element: <Home />,
+          element: <About />,
         },
         {
           path: "./contact",
-          element: <Home />,
+          element: <Contact />,
+        },
+        {
+          path: "./product:id",
+          element: <Product />,
+          loader: ProductLoader,
         },
       ],
     },
   ]);
+  return <RouterProvider router={routes} />;
 }
 
 export default App;
