@@ -21,15 +21,15 @@ function App() {
           loader: HomeLoader,
         },
         {
-          path: "./about",
+          path: "about",
           element: <About />,
         },
         {
-          path: "./contact",
+          path: "contact",
           element: <Contact />,
         },
         {
-          path: "./product:id",
+          path: "product/:id",
           element: <Product />,
           loader: ProductLoader,
         },
